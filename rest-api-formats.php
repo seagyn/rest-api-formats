@@ -23,7 +23,7 @@ add_filter(
 		switch ( $request['format'] ) {
 			case 'xml':
 				header( 'Content-Type: application/xml; charset=' . get_option( 'blog_charset' ) );
-				echo xml_conversion( $result->data );
+				echo raf_xml_conversion( $result->data );
 				$served = true;
 				break;
 		}
@@ -39,7 +39,7 @@ add_filter(
  * @param array  $array Array that you want to convert to XML.
  * @param object $xml XML object getting built by the array.
  */
-function xml_conversion( $array, $xml = null ) {
+function raf_xml_conversion( $array, $xml = null ) {
 	if ( is_null( $xml ) ) {
 		$xml = new SimpleXMLElement( '<result/>' );
 	}
