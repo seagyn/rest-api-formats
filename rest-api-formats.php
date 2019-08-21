@@ -47,9 +47,9 @@ function raf_xml_conversion( $array, $xml = null ) {
 	foreach ( $array as $key => $value ) {
 		if ( is_array( $value ) ) {
 			if ( is_int( $key ) ) {
-				xml_conversion( $value, $xml->addChild( 'item' ) );
+				raf_xml_conversion( $value, $xml->addChild( 'item' ) );
 			} else {
-				xml_conversion( $value, $xml->addChild( $key ) );
+				raf_xml_conversion( $value, $xml->addChild( $key ) );
 			}
 		} else {
 			if ( is_int( $key ) ) {
